@@ -25,3 +25,8 @@ Remove one call to `toLowerCase()` and predict which searches will fail.
 
 Typing filters immediately, clearing the field restores all movies, and the
 result count stays correct.
+
+## Tailwind focus
+
+Style native controls with placeholder, focus, and responsive utilities.
+`sr-only` keeps labels available to screen readers without changing the layout.

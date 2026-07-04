@@ -23,3 +23,9 @@ card that opened it.
 
 The modal closes via its button, Escape, and backdrop; clicking inside it does
 not close it.
+
+## Tailwind focus
+
+The overlay combines `fixed`, `inset-0`, z-index, backdrop blur, and responsive
+grid utilities. Group variants reveal the card action for hover and keyboard
+focus.

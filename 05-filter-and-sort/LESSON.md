@@ -22,3 +22,8 @@ Add an “Oldest first” option and implement its comparator.
 
 Search, genre, and sort work in every combination without changing the imported
 catalog.
+
+## Tailwind focus
+
+Use arbitrary grid tracks such as `md:grid-cols-[1fr_14rem]` when the design
+needs a precise layout that is not part of the default scale.

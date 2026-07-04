@@ -21,3 +21,9 @@ new JSX.
 ## Done when
 
 Eight distinct cards render from one `map` expression.
+
+## Tailwind focus
+
+Use responsive Grid utilities and an `aspect-[2/3]` poster ratio. Poster color
+themes are complete utility strings in `posterStyles.js`, so Tailwind can detect
+and generate them.

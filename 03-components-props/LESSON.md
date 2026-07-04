@@ -20,3 +20,8 @@ Add a `showRating` prop and conditionally hide the rating row.
 ## Done when
 
 React DevTools shows one `App` with eight `MovieCard` children.
+
+## Tailwind focus
+
+Utility classes move with `MovieCard`, keeping a component's markup, behavior,
+and presentation together without a separate card stylesheet.

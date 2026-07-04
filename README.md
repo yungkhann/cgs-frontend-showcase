@@ -49,6 +49,11 @@ src/
 └── supporting data, components, or services used in that step
 ```
 
+Every project uses Tailwind CSS v4 through `@tailwindcss/vite`. The small
+`styles.css` file imports Tailwind and defines the shared color/font tokens;
+layout, spacing, responsive behavior, states, and component styling are visible
+as utility classes directly in the JSX.
+
 ## Suggested classroom rhythm
 
 1. Open the current snapshot and predict its behavior.
@@ -69,7 +74,7 @@ Add your OMDb key and restart the development server. `.env.local` must not be c
 
 ## The finished project includes
 
-- responsive editorial design with plain CSS;
+- responsive editorial design with Tailwind CSS;
 - searchable, filterable, and sortable catalog;
 - favorites persisted in local storage;
 - favorites-only view;

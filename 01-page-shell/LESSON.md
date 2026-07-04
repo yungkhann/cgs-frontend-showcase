@@ -22,3 +22,8 @@ DevTools and find each semantic region.
 ## Done when
 
 The navigation, hero, empty collection heading, and footer all render.
+
+## Tailwind focus
+
+Read utility classes from left to right: layout, spacing, color, then responsive
+variants such as `md:px-10`. Theme tokens live in `src/styles.css`.

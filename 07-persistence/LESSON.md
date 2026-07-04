@@ -23,3 +23,8 @@ Application → Local Storage.
 
 Favorites survive refresh and the favorites-only view handles both populated
 and empty lists.
+
+## Tailwind focus
+
+Conditional classes make persisted UI state visible, while dashed borders and
+spacing utilities create an empty state without new CSS selectors.

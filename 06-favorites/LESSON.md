@@ -22,3 +22,8 @@ that clears the ID array.
 ## Done when
 
 Every heart toggles independently and the header count is always accurate.
+
+## Tailwind focus
+
+Choose complete utility strings for each state. The favorite button switches
+between inactive border utilities and active acid-background utilities.

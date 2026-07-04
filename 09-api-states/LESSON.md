@@ -23,3 +23,8 @@ and an error never leaves the app permanently loading.
 
 The curated catalog works without a key, and live search shows loading, success,
 empty, and error states with a key.
+
+## Tailwind focus
+
+Loading uses `animate-spin`; error, empty, and disabled states use color,
+opacity, border, and cursor variants rather than handcrafted selectors.

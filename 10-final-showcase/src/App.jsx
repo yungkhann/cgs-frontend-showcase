@@ -95,7 +95,7 @@ function App() {
   const closeModal = useCallback(() => setSelectedMovie(null), []);
 
   return (
-    <div className="app" id="top">
+    <div className="min-h-screen bg-ink text-paper" id="top">
       <Navbar
         favoriteCount={favoriteIds.length}
         showingFavorites={favoritesOnly}
@@ -103,12 +103,15 @@ function App() {
       />
 
       <main>
-        <section className="hero">
-          <div className="hero__glow" aria-hidden="true" />
-          <div className="hero__content">
-            <p className="eyebrow">Curated stories. Unforgettable nights.</p>
-            <h1>Find your next<br /><em>favorite film.</em></h1>
-            <p className="hero__copy">
+        <section className="border-b border-white/10 bg-[radial-gradient(circle_at_75%_25%,rgba(217,255,87,0.13),transparent_32%)]">
+          <div className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-36">
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-acid">
+              Curated stories. Unforgettable nights.
+            </p>
+            <h1 className="max-w-4xl font-display text-5xl leading-[0.92] tracking-tight md:text-7xl lg:text-8xl">
+              Find your next<br /><em className="font-normal text-acid">favorite film.</em>
+            </h1>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-muted">
               Search a thoughtful collection of cinema, save what catches your eye,
               and make tonight’s choice a good one.
             </p>
@@ -121,7 +124,7 @@ function App() {
               onGenreChange={setGenre}
               onSubmit={handleSearch}
             />
-            <p className="search-hint">
+            <p className="mt-4 text-sm text-muted">
               {hasOmdbKey
                 ? "Search submits live to OMDb. Filters update instantly."
                 : "Demo mode · add VITE_OMDB_API_KEY for live title search"}
@@ -129,21 +132,23 @@ function App() {
           </div>
         </section>
 
-        <section className="collection" id="collection" aria-labelledby="collection-title">
-          <div className="collection-heading">
+        <section className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24"
+          id="collection" aria-labelledby="collection-title">
+          <div className="mb-12 flex flex-col gap-5 border-b border-white/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="eyebrow">{sourceLabel}</p>
-              <h2 id="collection-title">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-acid">{sourceLabel}</p>
+              <h2 className="font-display text-4xl md:text-5xl" id="collection-title">
                 {favoritesOnly ? "Your favorites" : "Worth your time"}
               </h2>
             </div>
-            <div className="collection-tools">
-              <p aria-live="polite">
-                <strong>{visibleMovies.length}</strong>
+            <div className="flex items-center gap-5">
+              <p className="text-muted" aria-live="polite">
+                <strong className="text-paper">{visibleMovies.length}</strong>
                 {visibleMovies.length === 1 ? " film" : " films"}
               </p>
               <label className="sr-only" htmlFor="sort-movies">Sort movies</label>
               <select
+                className="rounded-sm border border-white/15 bg-ink px-4 py-3 text-sm focus:border-acid focus:outline-none"
                 id="sort-movies"
                 value={sortBy}
                 onChange={(event) => setSortBy(event.target.value)}
@@ -156,21 +161,24 @@ function App() {
           </div>
 
           {status === "loading" && (
-            <div className="loading-state" role="status">
-              <span className="loader" />
-              <p>Searching the archive…</p>
+            <div className="grid min-h-64 place-items-center text-center" role="status">
+              <div>
+                <span className="mx-auto block size-10 animate-spin rounded-full border-2 border-white/15 border-t-acid" />
+                <p className="mt-5 text-muted">Searching the archive…</p>
+              </div>
             </div>
           )}
 
           {status === "error" && (
-            <div className="error-state" role="alert">
+            <div className="rounded-sm border border-red-400/40 bg-red-400/10 px-6 py-12 text-center" role="alert">
               <p>{errorMessage}</p>
-              <button type="button" onClick={resetCollection}>Return to collection</button>
+              <button className="mt-6 rounded-sm bg-paper px-5 py-3 font-bold text-ink"
+                type="button" onClick={resetCollection}>Return to collection</button>
             </div>
           )}
 
           {status === "ready" && visibleMovies.length > 0 && (
-            <div className="movie-grid">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {visibleMovies.map((movie) => (
                 <MovieCard
                   key={movie.id}
@@ -189,10 +197,12 @@ function App() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <a className="brand" href="#top">Cine<span>Scope</span></a>
+      <footer className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-5 py-10 text-sm text-muted md:flex-row md:items-center md:justify-between md:px-10">
+        <a className="font-display text-2xl font-bold text-paper" href="#top">
+          Cine<span className="text-acid">Scope</span>
+        </a>
         <p>Made for people who still watch the credits.</p>
-        <p>React · Vite · Plain CSS</p>
+        <p>React · Vite · Tailwind CSS</p>
       </footer>
 
       {selectedMovie && (

@@ -13,7 +13,7 @@ The final app includes:
 - favorite persistence and a favorites-only view;
 - accessible dialog focus and keyboard behavior;
 - optional OMDb search with loading, error, and empty states;
-- responsive plain-CSS presentation.
+- responsive Tailwind CSS presentation.
 
 ## Teach
 
@@ -31,3 +31,8 @@ one extension: fetch full OMDb details, cancel stale searches, or add tests.
 
 Students can explain the data flow from a search or favorite click all the way
 to the next render—not merely demonstrate that it works.
+
+## Tailwind focus
+
+Review how theme tokens, responsive variants, state variants, arbitrary values,
+and component-local utility classes compose into the complete visual system.
